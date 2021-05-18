@@ -1,0 +1,10 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: sudo start-stop-daemon --background --verbose --start --name docker-up --pidfile /run/docker-up.pid --startas /usr/bin/docker-up -- --verbose
+    command: sleep 5 && make test
+
+vscode:
+  extensions:
+    - llvm-vs-code-extensions.vscode-clangd@0.1.11
